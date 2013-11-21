@@ -40,6 +40,9 @@ A simple CLI interface to AFC via libimobiledevice.
         put <localpath> [path]     upload a file (default: remote top-level dir)
 
 
+# Known Issues / TODO
+
+- listing output is fugly
 
 # Author
 
