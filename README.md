@@ -4,18 +4,18 @@ afcclient
 A simple CLI interface to AFC via libimobiledevice.
 
 
-# Requirements
+## Requirements
 
 - libimobiledevice (v 1.1.5+)
   https://github.com/libimobiledevice/libimobiledevice
 
 - For building, clang is also required (support for Blocks).
 
-# Building
+## Building
 
     $ make
 
-# Usage
+## Usage
 
     Usage: afcclient [ra:u:vh] command cmdargs...
 
@@ -40,15 +40,15 @@ A simple CLI interface to AFC via libimobiledevice.
         put <localpath> [path]     upload a file (default: remote top-level dir)
 
 
-# Known Issues / TODO
+## Known Issues / TODO
 
 - listing output is fugly
 
-# Author
+## Author
 
 Eric Monti - esmonti at gmail.com
 
 
-# License
+## License
 
 MIT - See LICENSE.txt
