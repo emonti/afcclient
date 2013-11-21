@@ -1,3 +1,15 @@
+/*
+ * afcclient
+ * Date: Nov 2013
+ * Eric Monti - esmonti at gmail dot com
+ *
+ * A simple CLI interface to AFC via libimobiledevice.
+ *
+ * Build with 'make'
+ *
+ * run "afcclient -h" for usage.
+ *
+ */
 
 #include <sys/syslimits.h>
 #include <stdio.h>

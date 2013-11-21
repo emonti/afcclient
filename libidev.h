@@ -1,3 +1,14 @@
+/*
+ * libidev
+ * Date: Nov 2013
+ * Eric Monti - esmonti at gmail dot com
+ *
+ * just a set of helper functions for and wrappers around the
+ * libimobiledevice library -- often making gratuitous and
+ * obscene use of clang blocks.
+ */
+
+
 #ifndef _libidev_h
 #define _libidev_h
 

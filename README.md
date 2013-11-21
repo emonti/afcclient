@@ -46,7 +46,7 @@ A simple CLI interface to AFC via libimobiledevice.
 
 # Author
 
-Eric Monti - esmonti at gmail.com
+Eric Monti - esmonti at gmail dot com
 
 
 # License
