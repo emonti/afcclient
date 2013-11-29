@@ -47,14 +47,16 @@ int dump_afc_device_info(afc_client_t afc)
         printf("AFC Device Info: -");
         for (i=0; infos[i]; i++)
             printf("%c%s", ((i%2)? ':' : ' '), infos[i]);
+
         printf("\n");
         ret = EXIT_SUCCESS;
+
     } else {
         fprintf(stderr, "Error: afc get device info failed: %s\n", idev_afc_strerror(err));
     }
 
     if (infos)
-        free(infos);
+        idevice_device_list_free(infos);
 
     return ret;
 }
@@ -69,6 +71,7 @@ int dump_afc_file_info(afc_client_t afc, const char *path)
     if (err == AFC_E_SUCCESS && infolist) {
         for(i=0; infolist[i]; i++)
             printf("%c%s", ((i%2)? '=' : ' '), infolist[i]);
+
         printf("\t%s\n", path);
         ret=EXIT_SUCCESS;
 
@@ -77,7 +80,7 @@ int dump_afc_file_info(afc_client_t afc, const char *path)
     }
 
     if (infolist)
-        free(infolist);
+        idevice_device_list_free(infolist);
 
     return ret;
 }
