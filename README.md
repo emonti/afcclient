@@ -11,6 +11,8 @@ A simple CLI interface to AFC via libimobiledevice.
 
 - For building, clang is also required (support for Blocks).
 
+- On Linux you will need the BlocksRuntime development libs. On Ubuntu the package is called 'libblocksruntime-dev'.
+
 ## Building
 
     $ make
