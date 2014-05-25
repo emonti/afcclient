@@ -11,7 +11,14 @@
  *
  */
 
-#include <sys/syslimits.h>
+#ifdef __linux
+  #include <limits.h>
+#endif
+
+#ifdef __APPLE__
+  #include <sys/syslimits.h>
+#endif
+
 #include <stdio.h>
 #include <errno.h>
 #include <libgen.h>
