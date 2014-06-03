@@ -21,6 +21,10 @@
 #include <libimobiledevice/afc.h>
 #include <libimobiledevice/house_arrest.h>
 
+#define AFC_SERVICE_NAME "com.apple.afc"
+#define AFC2_SERVICE_NAME "com.apple.afc2"
+#define HOUSE_ARREST_SERVICE_NAME "com.apple.mobile.house_arrest"
+
 extern bool idev_verbose;
 
 const char *idev_idevice_strerror(idevice_error_t errnum);

@@ -496,13 +496,14 @@ int cmd_main(afc_client_t afc, int argc, char **argv)
         return ret;
 }
 
-#define OPTION_FLAGS "ra:u:vh"
+#define OPTION_FLAGS "rs:a:u:vh"
 void usage(FILE *outf)
 {
     fprintf(outf,
         "Usage: %s [%s] command cmdargs...\n\n"
         "  Options:\n"
         "    -r, --root                 Use the afc2 server if jailbroken (ignored with -a)\n"
+        "    -s, --service=NAME>        Use the specified lockdown service (ignored with -a)\n"
         "    -a, --appid=<APP-ID>       Access bundle directory for app-id\n"
         "    -u, --uuid=<UDID>          Specify the device udid\n"
         "    -v, --verbose              Enable verbose debug messages\n"
@@ -526,6 +527,7 @@ void usage(FILE *outf)
 
 static struct option longopts[] = {
     { "root",       no_argument,            NULL,   'r' },
+    { "service",    required_argument,      NULL,   's' },
     { "appid",      required_argument,      NULL,   'a' },
     { "udid",       required_argument,      NULL,   'u' },
     { "verbose",    no_argument,            NULL,   'v' },
@@ -537,14 +539,19 @@ int main(int argc, char **argv)
 {
     progname = basename(argv[0]);
 
-    char *appid=NULL, *udid=NULL;
-    bool root=false;
+    char *appid=NULL, *udid=NULL, *svcname=NULL;;
+
+    svcname = AFC_SERVICE_NAME;
 
     int flag;
     while ((flag = getopt_long(argc, argv, OPTION_FLAGS, longopts, NULL)) != -1) {
         switch(flag) {
             case 'r':
-                root = true;
+                svcname = AFC2_SERVICE_NAME;
+                break;
+
+            case 's':
+                svcname = optarg;
                 break;
 
             case 'a':
@@ -590,7 +597,7 @@ int main(int argc, char **argv)
             return cmd_main(afc, argc, argv);
         });
     } else {
-        return idev_afc_client(progname, udid, root, ^int(afc_client_t afc) {
+        return idev_afc_client_ex(progname, udid, svcname, ^int(idevice_t idev, lockdownd_client_t client, lockdownd_service_descriptor_t ldsvc, afc_client_t afc) {
             return cmd_main(afc, argc, argv);
         });
     }

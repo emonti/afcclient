@@ -430,12 +430,6 @@ char * idev_get_app_path(idevice_t idevice, lockdownd_client_t lockd, const char
 
 #pragma mark - AFC helpers
 
-
-#define AFC_SERVICE_NAME "com.apple.afc"
-#define AFC2_SERVICE_NAME "com.apple.afc2"
-#define HOUSE_ARREST_SERVICE_NAME "com.apple.mobile.house_arrest"
-
-
 int idev_afc_client_ex(
         char *clientname,
         char *udid,
