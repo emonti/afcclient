@@ -63,7 +63,7 @@ const char *idev_lockdownd_strerror(lockdownd_error_t errnum)
             return "START_SERVICE_FAILED";
         case LOCKDOWN_E_NOT_ENOUGH_DATA:
             return "NOT_ENOUGH_DATA";
-        case LOCKDOWN_E_SET_VALUE_PROHIBITED:
+        case LOCKDOWN_E_SERVICE_PROHIBITED:
             return "SET_VALUE_PROHIBITED";
         case LOCKDOWN_E_GET_VALUE_PROHIBITED:
             return "GET_VALUE_PROHIBITED";
@@ -71,7 +71,7 @@ const char *idev_lockdownd_strerror(lockdownd_error_t errnum)
             return "REMOVE_VALUE_PROHIBITED";
         case LOCKDOWN_E_MUX_ERROR:
             return "MUX_ERROR";
-        case LOCKDOWN_E_ACTIVATION_FAILED:
+        case LOCKDOWN_E_PAIRING_FAILED:
             return "ACTIVATION_FAILED";
         case LOCKDOWN_E_PASSWORD_PROTECTED:
             return "PASSWORD_PROTECTED";
