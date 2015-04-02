@@ -59,19 +59,19 @@ const char *idev_lockdownd_strerror(lockdownd_error_t errnum)
             return "SSL_ERROR";
         case LOCKDOWN_E_DICT_ERROR:
             return "DICT_ERROR";
-        case LOCKDOWN_E_START_SERVICE_FAILED:
+        case LOCKDOWN_E_SERVICE_PROHIBITED:
             return "START_SERVICE_FAILED";
         case LOCKDOWN_E_NOT_ENOUGH_DATA:
             return "NOT_ENOUGH_DATA";
-        case LOCKDOWN_E_SET_VALUE_PROHIBITED:
+        case LOCKDOWN_E_SET_PROHIBITED:
             return "SET_VALUE_PROHIBITED";
-        case LOCKDOWN_E_GET_VALUE_PROHIBITED:
+        case LOCKDOWN_E_GET_PROHIBITED:
             return "GET_VALUE_PROHIBITED";
-        case LOCKDOWN_E_REMOVE_VALUE_PROHIBITED:
+        case LOCKDOWN_E_REMOVE_PROHIBITED:
             return "REMOVE_VALUE_PROHIBITED";
         case LOCKDOWN_E_MUX_ERROR:
             return "MUX_ERROR";
-        case LOCKDOWN_E_ACTIVATION_FAILED:
+        case LOCKDOWN_E_MISSING_ACTIVATION_RECORD:
             return "ACTIVATION_FAILED";
         case LOCKDOWN_E_PASSWORD_PROTECTED:
             return "PASSWORD_PROTECTED";
