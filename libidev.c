@@ -65,7 +65,7 @@ const char *idev_lockdownd_strerror(lockdownd_error_t errnum)
             return "NOT_ENOUGH_DATA";
         case LOCKDOWN_E_SERVICE_PROHIBITED:
             return "SET_VALUE_PROHIBITED";
-        case LOCKDOWN_E_GET_VALUE_PROHIBITED:
+        case LOCKDOWN_E_GET_PROHIBITED:
             return "GET_VALUE_PROHIBITED";
         case LOCKDOWN_E_REMOVE_PROHIBITED:
             return "REMOVE_VALUE_PROHIBITED";
