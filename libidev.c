@@ -71,7 +71,7 @@ const char *idev_lockdownd_strerror(lockdownd_error_t errnum)
             return "REMOVE_VALUE_PROHIBITED";
         case LOCKDOWN_E_MUX_ERROR:
             return "MUX_ERROR";
-        case LOCKDOWN_E_INVALID_ACTIVATION_RECORD:
+        case LOCKDOWN_E_MISSING_ACTIVATION_RECORD:
             return "ACTIVATION_FAILED";
         case LOCKDOWN_E_PASSWORD_PROTECTED:
             return "PASSWORD_PROTECTED";
