@@ -59,30 +59,64 @@ const char *idev_lockdownd_strerror(lockdownd_error_t errnum)
             return "SSL_ERROR";
         case LOCKDOWN_E_DICT_ERROR:
             return "DICT_ERROR";
-        case LOCKDOWN_E_START_SERVICE_FAILED:
-            return "START_SERVICE_FAILED";
         case LOCKDOWN_E_NOT_ENOUGH_DATA:
             return "NOT_ENOUGH_DATA";
-        case LOCKDOWN_E_SET_VALUE_PROHIBITED:
-            return "SET_VALUE_PROHIBITED";
-        case LOCKDOWN_E_GET_VALUE_PROHIBITED:
-            return "GET_VALUE_PROHIBITED";
-        case LOCKDOWN_E_REMOVE_VALUE_PROHIBITED:
-            return "REMOVE_VALUE_PROHIBITED";
         case LOCKDOWN_E_MUX_ERROR:
             return "MUX_ERROR";
-        case LOCKDOWN_E_ACTIVATION_FAILED:
-            return "ACTIVATION_FAILED";
-        case LOCKDOWN_E_PASSWORD_PROTECTED:
-            return "PASSWORD_PROTECTED";
         case LOCKDOWN_E_NO_RUNNING_SESSION:
             return "NO_RUNNING_SESSION";
+        case LOCKDOWN_E_INVALID_RESPONSE:
+            return "INVALID_RESPONSE";
+        case LOCKDOWN_E_MISSING_KEY:
+            return "MISSING_KEY";
+        case LOCKDOWN_E_MISSING_VALUE:
+            return "MISSING_VALUE";
+        case LOCKDOWN_E_GET_PROHIBITED:
+            return "GET_PROHIBITED";
+        case LOCKDOWN_E_SET_PROHIBITED:
+            return "SET_PROHIBITED";
+        case LOCKDOWN_E_REMOVE_PROHIBITED:
+            return "REMOVE_PROHIBITED";
+        case LOCKDOWN_E_IMMUTABLE_VALUE:
+            return "IMMUTABLE_VALUE";
+        case LOCKDOWN_E_PASSWORD_PROTECTED:
+            return "PASSWORD_PROTECTED";
+        case LOCKDOWN_E_USER_DENIED_PAIRING:
+            return "USER_DENIED_PAIRING";
+        case LOCKDOWN_E_PAIRING_DIALOG_RESPONSE_PENDING:
+            return "PAIRING_DIALOG_RESPONSE_PENDING";
+        case LOCKDOWN_E_MISSING_HOST_ID:
+            return "MISSING_HOST_ID";
         case LOCKDOWN_E_INVALID_HOST_ID:
             return "INVALID_HOST_ID";
+        case LOCKDOWN_E_SESSION_ACTIVE:
+            return "SESSION_ACTIVE";
+        case LOCKDOWN_E_SESSION_INACTIVE:
+            return "SESSION_INACTIVE";
+        case LOCKDOWN_E_MISSING_SESSION_ID:
+            return "MISSING_SESSION_ID";
+        case LOCKDOWN_E_INVALID_SESSION_ID:
+            return "INVALID_SESSION_ID";
+        case LOCKDOWN_E_MISSING_SERVICE:
+            return "MISSING_SERVICE";
         case LOCKDOWN_E_INVALID_SERVICE:
             return "INVALID_SERVICE";
+        case LOCKDOWN_E_SERVICE_LIMIT:
+            return "SERVICE_LIMIT";
+        case LOCKDOWN_E_MISSING_PAIR_RECORD:
+            return "MISSING_PAIR_RECORD";
+        case LOCKDOWN_E_SAVE_PAIR_RECORD_FAILED:
+            return "SAVE_PAIR_RECORD_FAILED";
+        case LOCKDOWN_E_INVALID_PAIR_RECORD:
+            return "INVALID_PAIR_RECORD";
         case LOCKDOWN_E_INVALID_ACTIVATION_RECORD:
             return "INVALID_ACTIVATION_RECORD";
+        case LOCKDOWN_E_MISSING_ACTIVATION_RECORD:
+            return "MISSING_ACTIVATION_RECORD";
+        case LOCKDOWN_E_SERVICE_PROHIBITED:
+            return "SERVICE_PROHIBITED";
+        case LOCKDOWN_E_ESCROW_LOCKED:
+            return "ESCROW_LOCKED";
         case LOCKDOWN_E_UNKNOWN_ERROR:
         default:
             return "UNKNOWN_EROR";
