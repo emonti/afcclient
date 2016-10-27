@@ -522,7 +522,7 @@ int idev_afc_app_client(char *clientname, char *udid, char *appid, int(^block)(a
 
             if (ha_err == HOUSE_ARREST_E_SUCCESS && ha_client) {
 
-                ha_err = house_arrest_send_command(ha_client, "VendContainer", appid);
+                ha_err = house_arrest_send_command(ha_client, "VendDocuments", appid);
 
                 if (ha_err == HOUSE_ARREST_E_SUCCESS) {
                     plist_t dict = NULL;
