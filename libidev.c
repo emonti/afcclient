@@ -34,9 +34,9 @@ const char *idev_idevice_strerror(idevice_error_t errnum)
             return "NO_DEVICE";
         case IDEVICE_E_NOT_ENOUGH_DATA:
             return "NOT_ENOUGH_DATA";
-        case IDEVICE_E_BAD_HEADER:
-            return "BAD_HEADER";
-        case IDEVICE_E_SSL_ERROR:
+//        case IDEVICE_E_BAD_HEADER:
+//            return "BAD_HEADER";
+//        case IDEVICE_E_SSL_ERROR:
         default:
             return "UNKNOWN_EROR";
     }
@@ -59,8 +59,8 @@ const char *idev_lockdownd_strerror(lockdownd_error_t errnum)
             return "SSL_ERROR";
         case LOCKDOWN_E_DICT_ERROR:
             return "DICT_ERROR";
-        case LOCKDOWN_E_NOT_ENOUGH_DATA:
-            return "NOT_ENOUGH_DATA";
+//        case LOCKDOWN_E_NOT_ENOUGH_DATA:
+//            return "NOT_ENOUGH_DATA";
         case LOCKDOWN_E_MUX_ERROR:
             return "MUX_ERROR";
         case LOCKDOWN_E_NO_RUNNING_SESSION:
