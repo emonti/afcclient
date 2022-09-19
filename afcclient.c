@@ -103,7 +103,8 @@ int dump_afc_list_path(afc_client_t afc, const char *path)
 
     afc_error_t err = afc_read_directory(afc, path, &list);
 
-    if (err == AFC_E_SUCCESS && list) {
+    //if (err == AFC_E_SUCCESS && list) {
+    if (list) {
         int i;
         printf("AFC Device Listing path=\"%s\":\n", path);
         for (i=0; list[i]; i++) {
@@ -511,7 +512,7 @@ void usage(FILE *outf)
         "  Options:\n"
         "    -r, --root                 Use the afc2 server if jailbroken (ignored with -a)\n"
         "    -s, --service=NAME>        Use the specified lockdown service (ignored with -a)\n"
-        "    -a, --appid=<APP-ID>       Access bundle directory for app-id\n"
+	"    -a, --appid=<APP-ID>       Access doc dir for app-id (paths still require Documents/ prefix)\n"
         "    -u, --uuid=<UDID>          Specify the device udid\n"
         "    -v, --verbose              Enable verbose debug messages\n"
         "    -h, --help                 Display this help message\n\n"

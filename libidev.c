@@ -509,6 +509,9 @@ int idev_afc_client(char *clientname, char *udid, bool root, int(^block)(afc_cli
 
 int idev_afc_app_client(char *clientname, char *udid, char *appid, int(^block)(afc_client_t afc))
 {
+    // TODO add back-support for VendContainer
+    const char *ha_command = "VendDocuments";
+
     return idev_lockdownd_client(clientname, udid, ^int(idevice_t idev, lockdownd_client_t client) {
         int ret = EXIT_FAILURE;
 
@@ -522,7 +525,7 @@ int idev_afc_app_client(char *clientname, char *udid, char *appid, int(^block)(a
 
             if (ha_err == HOUSE_ARREST_E_SUCCESS && ha_client) {
 
-                ha_err = house_arrest_send_command(ha_client, "VendContainer", appid);
+                ha_err = house_arrest_send_command(ha_client, ha_command, appid);
 
                 if (ha_err == HOUSE_ARREST_E_SUCCESS) {
                     plist_t dict = NULL;
@@ -562,8 +565,8 @@ int idev_afc_app_client(char *clientname, char *udid, char *appid, int(^block)(a
                         plist_free(dict);
 
                 } else {
-                    fprintf(stderr, "Error: Could not send VendContainer command with argument:%s - %s\n", 
-                            appid, idev_house_arrest_strerror(ha_err));
+                    fprintf(stderr, "Error: Could not send %s command with argument:%s - %s\n", 
+                            ha_command, appid, idev_house_arrest_strerror(ha_err));
                 }
 
             } else {

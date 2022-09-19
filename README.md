@@ -23,7 +23,7 @@ A simple CLI interface to AFC via libimobiledevice.
 
       Options:
         -r, --root                 Use the afc2 server if jailbroken (ignored with -a)
-        -a, --appid=<APP-ID>       Access bundle directory for app-id
+        -a, --appid=<APP-ID>       Access doc dir for app-id (paths still require Documents/ prefix)
         -u, --uuid=<UDID>          Specify the device udid
         -v, --verbose              Enable verbose debug messages
         -h, --help                 Display this help message
