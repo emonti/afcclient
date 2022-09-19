@@ -507,10 +507,11 @@ int idev_afc_client(char *clientname, char *udid, bool root, int(^block)(afc_cli
     });
 }
 
-int idev_afc_app_client(char *clientname, char *udid, char *appid, int(^block)(afc_client_t afc))
+int idev_afc_app_client(char *clientname, char *udid, char *appid, const char *ha_command, int(^block)(afc_client_t afc))
 {
-    // TODO add back-support for VendContainer
-    const char *ha_command = "VendDocuments";
+    if (!ha_command) {
+	ha_command = APPDIR_CONTAINER;
+    }
 
     return idev_lockdownd_client(clientname, udid, ^int(idevice_t idev, lockdownd_client_t client) {
         int ret = EXIT_FAILURE;

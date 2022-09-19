@@ -504,7 +504,7 @@ int cmd_main(afc_client_t afc, int argc, char **argv)
         return ret;
 }
 
-#define OPTION_FLAGS "rs:a:u:vh"
+#define OPTION_FLAGS "rs:c:d:u:vh"
 void usage(FILE *outf)
 {
     fprintf(outf,
@@ -512,7 +512,8 @@ void usage(FILE *outf)
         "  Options:\n"
         "    -r, --root                 Use the afc2 server if jailbroken (ignored with -a)\n"
         "    -s, --service=NAME>        Use the specified lockdown service (ignored with -a)\n"
-	"    -a, --appid=<APP-ID>       Access doc dir for app-id (paths still require Documents/ prefix)\n"
+	"    -c, --container=<APP-ID>   Access dir for app-id (may not work on newer iOS vers)\n"
+	"    -d, --documents=<APP-ID>   Access doc dir for app-id (paths still require Documents/ prefix)\n"
         "    -u, --uuid=<UDID>          Specify the device udid\n"
         "    -v, --verbose              Enable verbose debug messages\n"
         "    -h, --help                 Display this help message\n\n"
@@ -536,6 +537,8 @@ void usage(FILE *outf)
 static struct option longopts[] = {
     { "root",       no_argument,            NULL,   'r' },
     { "service",    required_argument,      NULL,   's' },
+    { "container",  required_argument,      NULL,   'c' },
+    { "documents",  required_argument,      NULL,   'd' },
     { "appid",      required_argument,      NULL,   'a' },
     { "udid",       required_argument,      NULL,   'u' },
     { "verbose",    no_argument,            NULL,   'v' },
@@ -547,7 +550,7 @@ int main(int argc, char **argv)
 {
     progname = basename(argv[0]);
 
-    char *appid=NULL, *udid=NULL, *svcname=NULL;;
+    char *appid=NULL, *udid=NULL, *svcname=NULL, *appdir=NULL;
 
     svcname = AFC_SERVICE_NAME;
 
@@ -562,8 +565,14 @@ int main(int argc, char **argv)
                 svcname = optarg;
                 break;
 
-            case 'a':
+            case 'c':
                 appid = optarg;
+		appdir = APPDIR_CONTAINER;
+                break;
+
+            case 'd':
+                appid = optarg;
+		appdir = APPDIR_DOCUMENTS;
                 break;
 
             case 'u':
@@ -601,7 +610,7 @@ int main(int argc, char **argv)
     }
 
     if (appid) {
-        return idev_afc_app_client(progname, udid, appid, ^int(afc_client_t afc) {
+        return idev_afc_app_client(progname, udid, appid, appdir, ^int(afc_client_t afc) {
             return cmd_main(afc, argc, argv);
         });
     } else {

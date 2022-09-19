@@ -25,6 +25,9 @@
 #define AFC2_SERVICE_NAME "com.apple.afc2"
 #define HOUSE_ARREST_SERVICE_NAME "com.apple.mobile.house_arrest"
 
+#define APPDIR_CONTAINER "VendContainer";
+#define APPDIR_DOCUMENTS "VendDocuments";
+
 extern bool idev_verbose;
 
 const char *idev_idevice_strerror(idevice_error_t errnum);
@@ -72,6 +75,7 @@ int idev_afc_app_client(
         char *clientname,
         char *udid,
         char *appid,
+	const char *appdir,
         int(^block)(afc_client_t afc) );
 
 #endif // _libidev_h
