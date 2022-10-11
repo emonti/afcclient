@@ -513,7 +513,7 @@ void usage(FILE *outf)
         "    -r, --root                 Use the afc2 server if jailbroken (ignored with -a)\n"
         "    -s, --service=NAME>        Use the specified lockdown service (ignored with -a)\n"
 	"    -c, --container=<APP-ID>   Access dir for app-id (may not work on newer iOS vers)\n"
-	"    -d, --documents=<APP-ID>   Access doc dir for app-id (paths still require Documents/ prefix)\n"
+	"    -d, --documents=<APP-ID>   Access doc dir for app-id (prefix paths with Documents/)\n"
         "    -u, --uuid=<UDID>          Specify the device udid\n"
         "    -v, --verbose              Enable verbose debug messages\n"
         "    -h, --help                 Display this help message\n\n"
