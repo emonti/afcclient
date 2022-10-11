@@ -510,8 +510,8 @@ void usage(FILE *outf)
     fprintf(outf,
         "Usage: %s [%s] command cmdargs...\n\n"
         "  Options:\n"
-        "    -r, --root                 Use the afc2 server if jailbroken (ignored with -a)\n"
-        "    -s, --service=NAME>        Use the specified lockdown service (ignored with -a)\n"
+        "    -r, --root                 Use the afc2 server if jailbroken (ignored with -c/-d)\n"
+        "    -s, --service=NAME>        Use the specified lockdown service (ignored with -c/-d)\n"
 	"    -c, --container=<APP-ID>   Access dir for app-id (may not work on newer iOS vers)\n"
 	"    -d, --documents=<APP-ID>   Access doc dir for app-id (prefix paths with Documents/)\n"
         "    -u, --uuid=<UDID>          Specify the device udid\n"

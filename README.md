@@ -18,19 +18,20 @@ A simple CLI interface to AFC via libimobiledevice.
     $ make
 
 ## Usage
+Usage: afcclient [rs:c:d:u:vh] command cmdargs...
 
-    Usage: afcclient [ra:u:vh] command cmdargs...
-
-      Options:
-        -r, --root                 Use the afc2 server if jailbroken (ignored with -a)
-        -a, --appid=<APP-ID>       Access doc dir for app-id (paths still require Documents/ prefix)
+     Options:
+        -r, --root                 Use the afc2 server if jailbroken (ignored with -c/-d)
+        -s, --service=NAME>        Use the specified lockdown service (ignored with -c/-d)
+        -c, --container=<APP-ID>   Access dir for app-id (may not work on newer iOS vers)
+        -d, --documents=<APP-ID>   Access doc dir for app-id (prefix paths with Documents/)
         -u, --uuid=<UDID>          Specify the device udid
         -v, --verbose              Enable verbose debug messages
         -h, --help                 Display this help message
 
       Where "command" and "cmdargs..." are as folows:
         devinfo                    dump device info from AFC server
-        ls <dir> [dir2...]         list remote directory contents
+        ls/list <dir> [dir2...]    list remote directory contents
         info <path> [path2...]     dump remote file information
         mkdir <path> [path2...]    create directory at path
         rm <path> [path2...]       remove directory at path
@@ -40,7 +41,6 @@ A simple CLI interface to AFC via libimobiledevice.
         cat <path>                 cat contents of <path> to stdout
         get <path> [localpath]     download a file (default: current dir)
         put <localpath> [path]     upload a file (default: remote top-level dir)
-
 
 ## Known Issues / TODO
 
