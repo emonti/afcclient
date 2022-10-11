@@ -1,3 +1,4 @@
 *.o
 afcclient
 *.dSYM
+*.swp
